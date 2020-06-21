@@ -1,0 +1,25 @@
+
+ <h2>Books</h2>
+<section class="book">
+<table cellspacing="10">
+	<thead>
+	<tr>
+		<th></th>
+		<th>Title</th>
+		<th>Opinion</th>
+		<th colspan="3"></th>
+	</tr>
+	</thead>
+<% @books.each do |book| %>
+<tbody>
+<tr>
+<td><%= attachment_image_tag user, :profile_image, :fill, 60, 60, format: 'jpeg', class: "img-circle pull-left profile-img" %></td>
+<td><%=book.title %></td>
+<td><%=book.opinion %></td>
+
+</tr>
+</tbody>
+<% end %>
+
+</table>
+ 

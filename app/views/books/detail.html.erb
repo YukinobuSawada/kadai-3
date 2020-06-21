@@ -1,0 +1,13 @@
+<h2>Book detail</h2>
+<table class="table">
+	<tbody>
+		<tr></tr>
+		<tr>
+			<td><%= @user.name %></td>
+			<td><%= @book.title %><td>
+			<td><%= @book.opinion %></td>
+			<td><%= link_to"Edit",%></td>
+			<td> <%= "Destroy",book_path(book.id),method: :delete,data:{confirm:"Are you sure?"} %>
+		</td>
+	</tr>
+</tbody>
