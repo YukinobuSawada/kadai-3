@@ -1,9 +1,9 @@
-<p class="notice"><%= flash[:notice] %>
+<p class="notice">
 </p>
 <div class="row">
   <div class="col-xs-3">
 <%= render 'users/info', user: @book.user %>
-<%= render 'books/list', book: @books %>
+<%= render 'books/list', book: Book.new %>
 </div>
 <div class="col-xs-9">
 <h2>Book detail</h2>
