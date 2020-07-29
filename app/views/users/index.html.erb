@@ -17,7 +17,15 @@
 		<tr>
 			<td><%= attachment_image_tag @user, :profile_image, :fill, 60, 60, format: 'jpeg' ,fallback: "no_image.jpg" ,size:'40x40'%></td>
 			<td><%= user.name %></td>
-			<td><%= link_to"Show",user_path(user.id) %>
+			<td>フォロー数：<%= user.followings.count %></td>
+			<td>フォロワー数：<%= user.followers.count %></td>
+			<td><% if current_user.following?(@user) %>
+      			<%= render "unfollow", user: @user%>
+    			<% else %>
+     			<%= render "follow", user: @user %>
+    			<% end %>
+    			</td>
+			<td><%= link_to"Show",user_path(user.id) %></td>
 		</tr>
 <% end %>
 </table>

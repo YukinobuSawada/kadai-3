@@ -8,4 +8,16 @@ class Book < ApplicationRecord
 	def favorited_by?(user)
 		favorites.where(user_id: user.id).exists?
 	end
+
+	def following?(other_user)
+        following.find_by(following_id: other_user.id)
+    end
+
+    def follow!(other_user)
+        following.create!(following_id: other_user.id)
+    end
+
+    def unfollow!(other_user)
+        following.find_by(following_id: other_user.id).destroy
+    end
 end

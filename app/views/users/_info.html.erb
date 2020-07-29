@@ -9,6 +9,15 @@
       <th>introduction</th>
       <th><%= user.introduction %></th>
       </tr>
+      <tr>
+        <th>follows</th>
+         <th><%= link_to "フォロー(#{@user.followings.count})", following_user_path(@user), class: "nav-link" %></th>
+      </tr>
+      <tr>
+         <th>followers</th>
+          <th><%= link_to "フォロワー(#{@user.followers.count})", followers_user_path(@user), class: "nav-link" %></th>
+      </tr>
+
     </table> 
     <% if user == current_user %>
     <%= link_to "", edit_user_path(current_user),class: 'col-xs-12 btn btn-default glyphicon glyphicon-wrench' %>
