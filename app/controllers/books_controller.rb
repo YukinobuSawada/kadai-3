@@ -67,6 +67,11 @@ class BooksController < ApplicationController
         @users = @user.followers
         render 'show_follower'
     end
+    # def search
+    # 	method = params[:search_method]
+    # 	word = params[:search_word]
+    # 	@books = Book.search(method,word)
+    # end
 
 private
     def book_params
